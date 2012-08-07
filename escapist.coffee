@@ -14,7 +14,7 @@ hexCharCode = (c) ->
 escapeToPropertyFile = (text) ->
   escapeText = for char in text
     charCode = hexCharCode(char)
-    escapedChar = '\\' + padToFour(charCode).toUpperCase()
+    escapedChar = '\\u' + padToFour(charCode).toUpperCase()
     if charCode >= hexCharCode('0') and charCode <= hexCharCode('z') then char else escapedChar
   escapeText.join('')
 
