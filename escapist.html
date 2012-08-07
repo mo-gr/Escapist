@@ -4,11 +4,11 @@
     <title>Escapist</title>
   </head>
   <body>
-    <textarea id="input" name="Input" rows="8" cols="40" onkeyup="Escapist.escape(document.getElementById('input'), document.getElementById('output'))"></textarea>
+    <textarea id="input" name="Input" rows="8" cols="40"></textarea>
     <textarea id="output" name="Output" rows="8" cols="40" readonly="true"></textarea>
     <script type="text/javascript" src="./escapist.js" charset="UTF-8"></script>
     <script type="text/javascript">
-      document.getElementById('input').focus();
+      Escapist.setup('input', 'output');
     </script>
   </body>
 </html>
