@@ -33,7 +33,7 @@
       for (_i = 0, _len = text.length; _i < _len; _i++) {
         char = text[_i];
         charCode = hexCharCode(char);
-        escapedChar = '\\' + padToFour(charCode).toUpperCase();
+        escapedChar = '\\u' + padToFour(charCode).toUpperCase();
         if (charCode >= hexCharCode('0') && charCode <= hexCharCode('z')) {
           _results.push(char);
         } else {
