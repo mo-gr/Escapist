@@ -15,7 +15,7 @@ escapeToPropertyFile = (text) ->
   escapeText = for char in text
     charCode = hexCharCode(char)
     escapedChar = '\\u' + padToFour(charCode).toUpperCase()
-    if charCode >= hexCharCode('0') and charCode <= hexCharCode('z') then char else escapedChar
+    if (charCode >= hexCharCode('0') and charCode <= hexCharCode('z')) or charCode == hexCharCode(' ') then char else escapedChar
   escapeText.join('')
 
 setup = (inputId, outputId) ->
