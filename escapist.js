@@ -21,7 +21,7 @@
   };
 
   hexCharCode = function(c) {
-    return c.charCodeAt().toString(16);
+    return c.charCodeAt();
   };
 
   escapeToPropertyFile = function(text) {
@@ -32,7 +32,7 @@
       for (_i = 0, _len = text.length; _i < _len; _i++) {
         char = text[_i];
         charCode = hexCharCode(char);
-        escapedChar = '\\u' + padToFour(charCode).toUpperCase();
+        escapedChar = '\\u' + padToFour(charCode.toString(16)).toUpperCase();
         if ((charCode >= hexCharCode('0') && charCode <= hexCharCode('z')) || charCode === hexCharCode(' ')) {
           _results.push(char);
         } else {

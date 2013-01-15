@@ -9,12 +9,12 @@ padToFour = (number) ->
   s.substr(s.length - 4)
 
 hexCharCode = (c) ->
-  c.charCodeAt().toString(16)
+  c.charCodeAt()
 
 escapeToPropertyFile = (text) ->
   escapeText = for char in text
     charCode = hexCharCode(char)
-    escapedChar = '\\u' + padToFour(charCode).toUpperCase()
+    escapedChar = '\\u' + padToFour(charCode.toString(16)).toUpperCase()
     if (charCode >= hexCharCode('0') and charCode <= hexCharCode('z')) or charCode == hexCharCode(' ') then char else escapedChar
   escapeText.join('')
 
